@@ -31,8 +31,9 @@ async function main() {
           image: productData.image,
           stripePriceId: productData.stripePriceId,
           isFeatured: productData.isFeatured,
-          createdAt: productData.createdAt,
-          updatedAt: productData.updatedAt,
+          availability: 'ONLINE',
+          // createdAt: productData.createdAt,
+          // updatedAt: productData.updatedAt,
         },
       });
       console.log(`Created product: ${productData.name}`);

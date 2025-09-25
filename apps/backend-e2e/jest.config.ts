@@ -10,7 +10,7 @@ const swcJestConfig = JSON.parse(
 swcJestConfig.swcrc = false;
 
 export default {
-  displayName: '@angular-tutorial-2025/tut25-backend-e2e',
+  displayName: '@angular-tutorial-2025/backend-e2e',
   preset: '../../jest.preset.js',
   globalSetup: '<rootDir>/src/support/global-setup.ts',
   globalTeardown: '<rootDir>/src/support/global-teardown.ts',

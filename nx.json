@@ -52,7 +52,11 @@
       "options": {
         "targetName": "test"
       },
-      "exclude": ["apps/tut25-backend-e2e/**/*"]
+      "exclude": [
+        "apps/tut25-backend-e2e/**/*",
+        "apps/backend-e2e/**/*",
+        "apps/backend-e2e/**/*"
+      ]
     }
   ],
   "targetDefaults": {

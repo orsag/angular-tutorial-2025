@@ -18,6 +18,42 @@
         "${workspaceFolder}/apps/tut25-backend/dist/**/*.(m|c|)js",
         "!**/node_modules/**"
       ]
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Debug @angular-tutorial-2025/backend with Nx",
+      "runtimeExecutable": "yarn",
+      "runtimeArgs": ["nx", "serve", "@angular-tutorial-2025/backend"],
+      "env": {
+        "NODE_OPTIONS": "--inspect=9230"
+      },
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen",
+      "skipFiles": ["<node_internals>/**"],
+      "sourceMaps": true,
+      "outFiles": [
+        "${workspaceFolder}/apps/backend/dist/**/*.(m|c|)js",
+        "!**/node_modules/**"
+      ]
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Debug @angular-tutorial-2025/backend with Nx",
+      "runtimeExecutable": "yarn",
+      "runtimeArgs": ["nx", "serve", "@angular-tutorial-2025/backend"],
+      "env": {
+        "NODE_OPTIONS": "--inspect=9231"
+      },
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen",
+      "skipFiles": ["<node_internals>/**"],
+      "sourceMaps": true,
+      "outFiles": [
+        "${workspaceFolder}/apps/backend/dist/**/*.(m|c|)js",
+        "!**/node_modules/**"
+      ]
     }
   ]
 }

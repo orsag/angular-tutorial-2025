@@ -1,7 +1,7 @@
 {
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
-    "outDir": "out-tsc/@angular-tutorial-2025/tut25-backend-e2e",
+    "outDir": "out-tsc/@angular-tutorial-2025/backend-e2e",
     "esModuleInterop": true,
     "noUnusedLocals": false,
     "noImplicitAny": false

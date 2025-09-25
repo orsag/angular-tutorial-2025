@@ -1,0 +1,112 @@
+generator client {
+  provider = "prisma-client-js"
+  // output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// model customer {
+//   first_name   String        @db.VarChar(30)
+//   last_name    String        @db.VarChar(30)
+//   email        String        @db.VarChar(60)
+//   company      String?       @db.VarChar(60)
+//   street       String        @db.VarChar(50)
+//   city         String        @db.VarChar(40)
+//   state        String        @default("SK") @db.Char(2)
+//   zip          Int
+//   phone        String        @db.VarChar(20)
+//   birth_date   DateTime?     @db.Date
+//   sex          sex_type
+//   date_entered DateTime      @db.Timestamp(6)
+//   id           Int           @id @default(autoincrement())
+//   sales_order  sales_order[]
+// }
+
+// model item {
+//   product_id Int?
+//   size       Int
+//   color      String       @db.VarChar(30)
+//   picture    String       @db.VarChar(256)
+//   price      Decimal      @db.Decimal(6, 2)
+//   id         Int          @id @default(autoincrement())
+//   product    product?     @relation(fields: [product_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+//   sales_item sales_item[]
+// }
+
+model Product {
+  id            Int          @id @default(autoincrement())
+  type_id       Int?
+  name          String       @unique @db.VarChar(30)
+  supplier      String?      @db.VarChar(30)
+  description   String
+  availability  Availability
+  price         Decimal      @db.Decimal(10, 2)
+  stripePriceId String       @db.VarChar(30)
+  image         String       @db.VarChar(60)
+  createdAt     DateTime     @default(now())
+  updatedAt     DateTime     @updatedAt
+  isFeatured    Boolean
+}
+
+enum Availability {
+  IN_STORE
+  ONLINE
+}
+
+// model product_type {
+//   name    String    @db.VarChar(30)
+//   id      Int       @id @default(autoincrement())
+//   product product[]
+// }
+
+// model sales_item {
+//   item_id        Int?
+//   sales_order_id Int?
+//   quantity       Int
+//   discount       Decimal?     @default(0) @db.Decimal(3, 2)
+//   taxable        Boolean      @default(false)
+//   sales_tax_rate Decimal      @default(0) @db.Decimal(5, 2)
+//   id             Int          @id @default(autoincrement())
+//   item           item?        @relation(fields: [item_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+//   sales_order    sales_order? @relation(fields: [sales_order_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+// }
+
+// model sales_order {
+//   cust_id                 Int?
+//   sales_person_id         Int?
+//   time_order_taken        DateTime      @db.Timestamp(6)
+//   purchase_order_number   BigInt
+//   credit_card_number      String        @db.VarChar(16)
+//   credit_card_exper_month Int           @db.SmallInt
+//   credit_card_exper_day   Int           @db.SmallInt
+//   credit_card_secret_code Int           @db.SmallInt
+//   name_on_card            String        @db.VarChar(100)
+//   id                      Int           @id @default(autoincrement())
+//   sales_item              sales_item[]
+//   customer                customer?     @relation(fields: [cust_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+//   sales_person            sales_person? @relation(fields: [sales_person_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+// }
+
+// model sales_person {
+//   first_name  String        @db.VarChar(30)
+//   last_name   String        @db.VarChar(30)
+//   email       String        @db.VarChar(60)
+//   street      String        @db.VarChar(50)
+//   city        String        @db.VarChar(40)
+//   state       String        @default("PA") @db.Char(2)
+//   zip         Int
+//   phone       String        @db.VarChar(20)
+//   birth_date  DateTime?     @db.Date
+//   sex         sex_type
+//   date_hired  DateTime      @db.Timestamp(6)
+//   id          Int           @id @default(autoincrement())
+//   sales_order sales_order[]
+// }
+
+// enum sex_type {
+//   M
+//   F
+// }

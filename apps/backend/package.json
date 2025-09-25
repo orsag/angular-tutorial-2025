@@ -1,5 +1,5 @@
 {
-  "name": "@angular-tutorial-2025/tut25-backend",
+  "name": "@angular-tutorial-2025/backend",
   "version": "0.0.1",
   "private": true,
   "nx": {
@@ -11,7 +11,7 @@
           "args": [
             "--node-env=production"
           ],
-          "cwd": "apps/tut25-backend"
+          "cwd": "apps/backend"
         },
         "configurations": {
           "development": {
@@ -28,8 +28,8 @@
         "cache": true,
         "executor": "@nx/js:prune-lockfile",
         "outputs": [
-          "{workspaceRoot}/apps/tut25-backend/dist/package.json",
-          "{workspaceRoot}/apps/tut25-backend/dist/package-lock.json"
+          "{workspaceRoot}/apps/backend/dist/package.json",
+          "{workspaceRoot}/apps/backend/dist/yarn.lock"
         ],
         "options": {
           "buildTarget": "build"
@@ -41,7 +41,7 @@
         ],
         "cache": true,
         "outputs": [
-          "{workspaceRoot}/apps/tut25-backend/dist/workspace_modules"
+          "{workspaceRoot}/apps/backend/dist/workspace_modules"
         ],
         "executor": "@nx/js:copy-workspace-modules",
         "options": {
@@ -63,29 +63,24 @@
           "build"
         ],
         "options": {
-          "buildTarget": "@angular-tutorial-2025/tut25-backend:build",
+          "buildTarget": "@angular-tutorial-2025/backend:build",
           "runBuildTargetDependencies": false
         },
         "configurations": {
           "development": {
-            "buildTarget": "@angular-tutorial-2025/tut25-backend:build:development"
+            "buildTarget": "@angular-tutorial-2025/backend:build:development"
           },
           "production": {
-            "buildTarget": "@angular-tutorial-2025/tut25-backend:build:production"
+            "buildTarget": "@angular-tutorial-2025/backend:build:production"
           }
-        }
-      },
-      "test": {
-        "options": {
-          "passWithNoTests": true
         }
       }
     }
   },
-  "prisma": {
-    "seed": "npx ts-node ./prisma/seed.ts"
-  },
   "dependencies": {
     "@prisma/client": "6.16.2"
+  },
+  "devDependencies": {
+    "prisma": "^6.16.2"
   }
 }

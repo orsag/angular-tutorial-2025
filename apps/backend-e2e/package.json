@@ -1,10 +1,10 @@
 {
-  "name": "@angular-tutorial-2025/tut25-backend-e2e",
+  "name": "@angular-tutorial-2025/backend-e2e",
   "version": "0.0.1",
   "private": true,
   "nx": {
     "implicitDependencies": [
-      "@angular-tutorial-2025/tut25-backend"
+      "@angular-tutorial-2025/backend"
     ],
     "targets": {
       "e2e": {
@@ -13,12 +13,12 @@
           "{projectRoot}/test-output/jest/coverage"
         ],
         "options": {
-          "jestConfig": "apps/tut25-backend-e2e/jest.config.ts",
+          "jestConfig": "apps/backend-e2e/jest.config.ts",
           "passWithNoTests": true
         },
         "dependsOn": [
-          "@angular-tutorial-2025/tut25-backend:build",
-          "@angular-tutorial-2025/tut25-backend:serve"
+          "@angular-tutorial-2025/backend:build",
+          "@angular-tutorial-2025/backend:serve"
         ]
       }
     }
