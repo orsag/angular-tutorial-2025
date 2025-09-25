@@ -1,13 +1,13 @@
 {
   "compilerOptions": {
-    "composite": true,
+    "composite": false,
     "declarationMap": true,
-    "emitDeclarationOnly": true,
+    "emitDeclarationOnly": false,
     "importHelpers": true,
     "isolatedModules": true,
-    "lib": ["es2022"],
-    "module": "nodenext",
-    "moduleResolution": "nodenext",
+    "lib": ["es2022", "dom"],
+    "module": "esnext",
+    "moduleResolution": "node",
     "noEmitOnError": true,
     "noFallthroughCasesInSwitch": true,
     "noImplicitOverride": true,
@@ -16,6 +16,7 @@
     "skipLibCheck": true,
     "strict": true,
     "target": "es2022",
-    "customConditions": ["@angular-tutorial-2025/source"]
+    "customConditions": ["@angular-tutorial-2025/source"],
+    "declaration": false
   }
 }

@@ -48,3 +48,4 @@ test-output
 # Prisma (if applicable)
 /prisma/migrations/*.sql
 /prisma/dev.db # If using sqlite for dev
+.angular
