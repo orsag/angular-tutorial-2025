@@ -41,7 +41,6 @@ model Product {
   type_id       Int?
   name          String       @unique @db.VarChar(30)
   supplier      String?      @db.VarChar(30)
-  description   String
   availability  Availability
   price         Decimal      @db.Decimal(10, 2)
   stripePriceId String       @db.VarChar(30)
@@ -49,6 +48,31 @@ model Product {
   createdAt     DateTime     @default(now())
   updatedAt     DateTime     @updatedAt
   isFeatured    Boolean
+  description   Description?
+  reviews       Review[]
+  tags          Tag[]
+}
+
+model Description {
+  id        Int     @id @default(autoincrement())
+  content   String
+  product   Product @relation(fields: [productId], references: [id])
+  productId Int     @unique
+}
+
+model Review {
+  id        Int     @id @default(autoincrement())
+  title     String
+  content   String
+  rating    Int
+  product   Product @relation(fields: [productId], references: [id])
+  productId Int
+}
+
+model Tag {
+  id       Int       @id @default(autoincrement())
+  content  String
+  products Product[]
 }
 
 enum Availability {
