@@ -4,12 +4,6 @@
   "files": [],
   "references": [
     {
-      "path": "./apps/tut25-backend-e2e"
-    },
-    {
-      "path": "./apps/tut25-backend"
-    },
-    {
       "path": "./apps/backend-e2e"
     },
     {
